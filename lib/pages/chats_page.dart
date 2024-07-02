@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:messenger/dialog_helper.dart';
 import 'package:messenger/dummy_data.dart';
 import 'package:messenger/pages/chat_overview_page.dart';
 import 'package:messenger/widget/app_bottom_bar.dart';
 import 'package:messenger/widget/chat_tile.dart';
 import 'package:messenger/widget/likes_tile.dart';
 
-class ChatsPage extends StatelessWidget {
+class ChatsPage extends StatefulWidget {
   const ChatsPage({super.key});
+
+  @override
+  State<ChatsPage> createState() => _ChatsPageState();
+}
+
+class _ChatsPageState extends State<ChatsPage> with DialogHelper {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showSubscription(context);
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

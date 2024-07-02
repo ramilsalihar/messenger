@@ -17,6 +17,8 @@ class AppTheme {
       primary: _colors.purpleColor,
       secondary: _colors.yellowColor,
       onSurface: _colors.greyColor,
+      onSecondaryContainer: _colors.popUpColor,
+      onTertiary: _colors.buttonColor,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: _colors.blackColor,
@@ -29,8 +31,8 @@ class AppTheme {
         fontWeight: FontWeight.w400,
       ),
       headlineLarge: GoogleFonts.ubuntu(
-        color: Colors.white,
-        fontSize: 18.0,
+        color: Colors.white.withOpacity(0.9),
+        fontSize: 16.0,
         fontWeight: FontWeight.w300,
       ),
       headlineMedium: GoogleFonts.ubuntu(
