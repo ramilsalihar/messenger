@@ -14,7 +14,9 @@ class AppTheme {
       textTheme: ButtonTextTheme.primary,
     ),
     colorScheme: ColorScheme.fromSwatch().copyWith(
+      primary: _colors.purpleColor,
       secondary: _colors.yellowColor,
+      onSurface: _colors.greyColor,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: _colors.blackColor,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:messenger/dummy_data.dart';
+import 'package:messenger/pages/chat_overview_page.dart';
 import 'package:messenger/widget/app_bottom_bar.dart';
 import 'package:messenger/widget/chat_tile.dart';
 import 'package:messenger/widget/likes_tile.dart';
@@ -66,11 +67,21 @@ class ChatsPage extends StatelessWidget {
                           return const LikesTile(isRead: false);
                         } else {
                           return ChatTile(
-                            imageUrl: dummyData[index - 1].imageUrl,
-                            timestamp: dummyData[index - 1].time,
-                            message: dummyData[index - 1].message,
-                            isRead: dummyData[index - 1].isRead,
-                          );
+                              imageUrl: dummyData[index - 1].imageUrl,
+                              timestamp: dummyData[index - 1].time,
+                              message: dummyData[index - 1].message,
+                              isRead: dummyData[index - 1].isRead,
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ChatOverviewPage(
+                                      imageUrl: dummyData[index - 1].imageUrl,
+                                      commonLikes: 2,
+                                    ),
+                                  ),
+                                );
+                              });
                         }
                       },
                     ),
