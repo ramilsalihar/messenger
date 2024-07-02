@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:messenger/dummy_data.dart';
 import 'package:messenger/widget/app_bottom_bar.dart';
+import 'package:messenger/widget/chat_tile.dart';
 
 class ChatsPage extends StatelessWidget {
   const ChatsPage({super.key});
@@ -25,13 +27,13 @@ class ChatsPage extends StatelessWidget {
                 ),
               ),
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: dummyData.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(
-                      'Chat $index',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                  return ChatTile(
+                    imageUrl: dummyData[index].imageUrl,
+                    timestamp: dummyData[index].time,
+                    message: dummyData[index].message,
+                    isRead: dummyData[index].isRead,
                   );
                 },
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:messenger/theme/app_colors.dart';
 
 class AppTheme {
@@ -19,6 +20,22 @@ class AppTheme {
       backgroundColor: _colors.blackColor,
       selectedItemColor: _colors.yellowColor,
     ),
-    textTheme: TextTheme(),
+    textTheme: TextTheme(
+      headlineLarge: GoogleFonts.ubuntu(
+        color: Colors.white,
+        fontSize: 24.0,
+        fontWeight: FontWeight.w300,
+      ),
+      headlineMedium: GoogleFonts.ubuntu(
+        color: Colors.white,
+        fontSize: 14.0,
+        fontWeight: FontWeight.w300,
+      ),
+      headlineSmall: GoogleFonts.ubuntu(
+        color: Colors.white,
+        fontSize: 12.0,
+        fontWeight: FontWeight.w300,
+      ),
+    ),
   );
 }
