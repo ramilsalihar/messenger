@@ -12,4 +12,8 @@ class AppColors {
   Color get popUpColor => const Color(0xFF0D1333);
 
   Color get buttonColor => const Color(0xFFAA044A);
+
+  Color get yellowColor => const Color(0xFFF2C94C);
+
+  Color get blackColor => const Color(0xFF191818);
 }

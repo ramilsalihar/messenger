@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messenger/widget/app_bottom_bar.dart';
 
 class ChatsPage extends StatelessWidget {
   const ChatsPage({super.key});
@@ -37,6 +38,10 @@ class ChatsPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: AppBottomBar(
+        selectedIndex: 1,
+        onItemTapped: (index) {},
       ),
     );
   }
