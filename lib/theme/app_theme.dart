@@ -21,9 +21,14 @@ class AppTheme {
       selectedItemColor: _colors.yellowColor,
     ),
     textTheme: TextTheme(
-      headlineLarge: GoogleFonts.ubuntu(
+      displayLarge: GoogleFonts.ubuntu(
         color: Colors.white,
         fontSize: 24.0,
+        fontWeight: FontWeight.w400,
+      ),
+      headlineLarge: GoogleFonts.ubuntu(
+        color: Colors.white,
+        fontSize: 18.0,
         fontWeight: FontWeight.w300,
       ),
       headlineMedium: GoogleFonts.ubuntu(

@@ -1,17 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ChatTile extends StatelessWidget {
-  const ChatTile({
-    super.key,
-    required this.imageUrl,
-    required this.timestamp,
-    required this.message,
-    required this.isRead,
-  });
+class LikesTile extends StatelessWidget {
+  const LikesTile({super.key, required this.isRead});
 
-  final String imageUrl;
-  final String timestamp;
-  final String message;
   final bool isRead;
 
   @override
@@ -25,17 +16,15 @@ class ChatTile extends StatelessWidget {
         leading: CircleAvatar(
           radius: 30,
           child: Image.asset(
-            imageUrl,
+            'assets/images/like.png',
             fit: BoxFit.cover,
           ),
         ),
         title: Text(
-          timestamp,
-          style: theme.textTheme.headlineSmall,
-        ),
-        subtitle: Text(
-          message,
-          style: theme.textTheme.headlineMedium,
+          '44 человека тебя лайкнули',
+          style: theme.textTheme.headlineMedium!.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         trailing: !isRead
             ? const Icon(

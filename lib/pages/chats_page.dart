@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:messenger/dummy_data.dart';
 import 'package:messenger/widget/app_bottom_bar.dart';
 import 'package:messenger/widget/chat_tile.dart';
+import 'package:messenger/widget/likes_tile.dart';
 
 class ChatsPage extends StatelessWidget {
   const ChatsPage({super.key});
@@ -26,16 +27,55 @@ class ChatsPage extends StatelessWidget {
                   topRight: Radius.circular(8),
                 ),
               ),
-              child: ListView.builder(
-                itemCount: dummyData.length,
-                itemBuilder: (context, index) {
-                  return ChatTile(
-                    imageUrl: dummyData[index].imageUrl,
-                    timestamp: dummyData[index].time,
-                    message: dummyData[index].message,
-                    isRead: dummyData[index].isRead,
-                  );
-                },
+              child: Column(
+                children: [
+                  Flexible(
+                    flex: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        top: 15,
+                        left: 15,
+                        right: 15,
+                        // bottom: 10,
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            'ЧАТЫ',
+                            style: theme.textTheme.displayLarge,
+                          ),
+                          const Spacer(),
+                          Text(
+                            'OFF',
+                            style: theme.textTheme.displayLarge,
+                          ),
+                          const SizedBox(width: 15),
+                          SizedBox(
+                            height: 30,
+                            child: Image.asset('assets/icons/glasses.png'),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: dummyData.length + 1,
+                      itemBuilder: (context, index) {
+                        if (index == 0) {
+                          return const LikesTile(isRead: false);
+                        } else {
+                          return ChatTile(
+                            imageUrl: dummyData[index - 1].imageUrl,
+                            timestamp: dummyData[index - 1].time,
+                            message: dummyData[index - 1].message,
+                            isRead: dummyData[index - 1].isRead,
+                          );
+                        }
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
