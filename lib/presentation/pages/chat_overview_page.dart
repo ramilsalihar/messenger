@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:messenger/widget/send_message_bar.dart';
+import 'package:messenger/presentation/widget/send_message_bar.dart';
 
 class ChatOverviewPage extends StatelessWidget {
   const ChatOverviewPage({

@@ -14,6 +14,8 @@ dependencies:
 
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
+  auto_route: ^8.2.0
+  auto_route_generator: ^8.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:messenger/widget/app_button.dart';
-import 'package:messenger/widget/price_card.dart';
+import 'package:messenger/presentation/widget/app_button.dart';
+import 'package:messenger/presentation/widget/price_card.dart';
 
 mixin DialogHelper<T extends StatefulWidget> on State<T> {
   void showSubscription(BuildContext context) {

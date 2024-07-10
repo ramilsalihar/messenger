@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:messenger/dialog_helper.dart';
 import 'package:messenger/dummy_data.dart';
-import 'package:messenger/pages/chat_overview_page.dart';
-import 'package:messenger/widget/app_bottom_bar.dart';
-import 'package:messenger/widget/chat_tile.dart';
-import 'package:messenger/widget/likes_tile.dart';
+import 'package:messenger/presentation/pages/chat_overview_page.dart';
+import 'package:messenger/presentation/widget/app_bottom_bar.dart';
+import 'package:messenger/presentation/widget/chat_tile.dart';
+import 'package:messenger/presentation/widget/likes_tile.dart';
 
 class ChatsPage extends StatefulWidget {
   const ChatsPage({super.key});
