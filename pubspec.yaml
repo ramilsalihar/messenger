@@ -16,6 +16,7 @@ dependencies:
   google_fonts: ^6.2.1
   auto_route: ^8.2.0
   auto_route_generator: ^8.0.0
+  flutter_slidable: ^3.1.1
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +31,7 @@ flutter:
   assets:
    - assets/icons/
    - assets/images/
+   - assets/layout/
 
   # fonts:
   #   - family: Schyler

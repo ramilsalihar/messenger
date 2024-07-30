@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
-class ChatTile extends StatelessWidget {
+class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
     required this.imageUrl,
@@ -17,37 +18,69 @@ class ChatTile extends StatelessWidget {
   final Function() onTap;
 
   @override
+  State<ChatTile> createState() => _ChatTileState();
+}
+
+class _ChatTileState extends State<ChatTile> {
+  // late SlidableController swipeController;
+  //
+  // @override
+  // void initState() {
+  //   super.initState();
+  // }
+
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return InkWell(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Padding(
         padding: const EdgeInsets.only(
           bottom: 8,
         ),
-        child: ListTile(
-          leading: CircleAvatar(
-            radius: 30,
-            child: Image.asset(
-              imageUrl,
-              fit: BoxFit.cover,
+        child: Slidable(
+          groupTag: 'chat',
+          // controller: swipeController,
+          endActionPane: ActionPane(
+            motion: const ScrollMotion(),
+            dismissible: DismissiblePane(onDismissed: () {}),
+            children: [
+              SlidableAction(
+                onPressed: (_) {},
+                backgroundColor: Color(0xFFFE4A49),
+                foregroundColor: Colors.white,
+                icon: Icons.delete,
+                label: 'Delete',
+              ),
+            ],
+          ),
+          child: Container(
+            // color: Colors.grey,
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 30,
+                child: Image.asset(
+                  widget.imageUrl,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              title: Text(
+                widget.timestamp,
+                style: theme.textTheme.headlineSmall,
+              ),
+              subtitle: Text(
+                widget.message,
+                style: theme.textTheme.headlineMedium,
+              ),
+              trailing: !widget.isRead
+                  ? const Icon(
+                      Icons.circle,
+                      size: 5.0,
+                      color: Colors.white,
+                    )
+                  : null,
             ),
           ),
-          title: Text(
-            timestamp,
-            style: theme.textTheme.headlineSmall,
-          ),
-          subtitle: Text(
-            message,
-            style: theme.textTheme.headlineMedium,
-          ),
-          trailing: !isRead
-              ? const Icon(
-                  Icons.circle,
-                  size: 5.0,
-                  color: Colors.white,
-                )
-              : null,
         ),
       ),
     );

@@ -9,6 +9,9 @@ class AppTheme {
     primaryColor: _colors.primaryColor,
     canvasColor: _colors.secondaryColor,
     dialogBackgroundColor: _colors.popUpColor,
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    splashFactory: NoSplash.splashFactory,
     buttonTheme: ButtonThemeData(
       buttonColor: _colors.buttonColor,
       textTheme: ButtonTextTheme.primary,

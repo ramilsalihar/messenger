@@ -46,8 +46,8 @@ class _AppBottomBarState extends State<AppBottomBar> {
             height: 5,
           ),
           SizedBox(
-            height: 30,
-            width: 30,
+            height: 25,
+            width: 25,
             child: widget.selectedIndex == index
                 ? Image.asset(
                     path,
@@ -56,9 +56,6 @@ class _AppBottomBarState extends State<AppBottomBar> {
                 : Image.asset(
                     path,
                   ),
-          ),
-          const SizedBox(
-            height: 5,
           ),
         ],
       ),
