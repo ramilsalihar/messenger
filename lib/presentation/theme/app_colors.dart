@@ -18,4 +18,6 @@ class AppColors {
   Color get blackColor => const Color(0xFF191818);
 
   Color get greyColor => const Color(0xFF8D8D8D);
+
+  Color get onTertiary => const Color(0xFF1E7EF066);
 }
