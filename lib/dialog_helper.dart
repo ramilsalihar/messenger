@@ -9,7 +9,7 @@ mixin DialogHelper<T extends StatefulWidget> on State<T> {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
       ),
-      builder: (context) => CustomBottomSheet(),
+      builder: (context) => const CustomBottomSheet(),
     );
   }
 }

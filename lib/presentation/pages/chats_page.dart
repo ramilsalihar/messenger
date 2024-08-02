@@ -31,7 +31,7 @@ class _ChatsPageState extends State<ChatsPage> with DialogHelper {
           children: [
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(8),
                 ),
@@ -45,7 +45,7 @@ class _ChatsPageState extends State<ChatsPage> with DialogHelper {
             Align(
               alignment: Alignment.bottomCenter,
               child: SizedBox(
-                height: height * 0.7,
+                height: height * 0.8,
                 child: Container(
                   decoration: BoxDecoration(
                     color: theme.primaryColor,

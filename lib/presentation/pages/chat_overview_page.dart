@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messenger/presentation/widget/message.dart';
 import 'package:messenger/presentation/widget/send_message_bar.dart';
 
 class ChatOverviewPage extends StatelessWidget {
@@ -106,7 +107,7 @@ class ChatOverviewPage extends StatelessWidget {
                   topRight: Radius.circular(8),
                 ),
               ),
-              child: Stack(
+              child:  Stack(
                 children: [
                   Align(
                     alignment: Alignment.topCenter,
@@ -114,10 +115,23 @@ class ChatOverviewPage extends StatelessWidget {
                       padding: const EdgeInsets.only(
                         top: 80,
                       ),
-                      child: Text('Начни общение'),
+                      child: ListView(
+                        children:  [
+                          Message(
+                            message: 'Привет, малышка',
+                            isMine: false,
+                            date: DateTime.now().subtract(const Duration(days: 1)),
+                        ),
+                          Message(
+                            message: 'Привет',
+                            isMine: true,
+                            date: DateTime.now(),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  Align(
+                  const Align(
                     alignment: Alignment.bottomCenter,
                     child: SendMessageBar(),
                   )
